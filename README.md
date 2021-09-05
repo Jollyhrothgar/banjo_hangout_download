@@ -26,4 +26,4 @@ by getting a list of all `div`s containing tab links, and then regular
 expressions are used to parse out the details. Here's an example of the data
 container:
 
-![Container](img/hangout_example.png)
+![Container](./img/hangout_example.png)
