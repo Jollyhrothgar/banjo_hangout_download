@@ -1,0 +1,1606 @@
+
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <meta name="theme-color" content="#220401" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Browse Tabs By First Letter: (#s) - Banjo Hangout</title>
+        <link rel="stylesheet" href="/global/css/foundation.css?v=1.04">
+        <link rel="stylesheet" href="/global/css/app.css?v=1.43">
+        <link rel="stylesheet" href="/global/css/print.css?v=1.0">
+        <link href='/global/css/jquery.mentionsInput.css?v=1.03' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Merriweather:400italic,300italic|Open+Sans:400,400italic,300italic,300,500,500italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+        <!--chocolat lightbox-->
+        <link rel="stylesheet" href="/global/css/chocolat.css" type="text/css" media="screen" charset="utf-8">
+
+        <script src="/global/js/vendor/jquery.js?v=1.00"></script>
+
+        <!-- favicon browser & mobile icons - Generated at realfavicongenerator.net -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+
+
+        <!--for jquery mentionsInput-->
+        <script src='//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js' type='text/javascript'></script>
+        <!--sidr off canvas menu-->
+        <script src="/global/js/jquery.sidr.min.js"></script>
+
+        <script src="/global/jquery-ui.min.js?v=1.00" type="text/javascript"></script>
+        <link rel="stylesheet" href="/global/jquery-ui.min.css?v=1.02" type="text/css" />
+        <!--modal window includes
+
+            INSERTED FOR ATTACHMENT MANAGER TESTING PURPOSES ONLY -- WE'LL NEED TO SWAP THIS OUT FOR A NICER MODAL BEFORE LIVE -->
+            <link rel="stylesheet" href="/global/dhtmlwindow/windowfiles/dhtmlwindow.css" type="text/css" />
+            <link rel="stylesheet" href="/global/dhtmlwindow/modalfiles/modal.css" type="text/css" />
+            <script type="text/javascript" src="/global/dhtmlwindow/windowfiles/dhtmlwindow.js"></script>
+            <script type="text/javascript" src="/global/dhtmlwindow/modalfiles/modal.js"></script>
+
+            <!--end modal window includes-->
+
+
+            <script type="text/javascript">
+                var offSet, theDate = new Date();
+
+                offSet = -theDate.getTimezoneOffset()/60;
+                theDate.setDate(theDate.getDate()+365);
+
+                document.cookie = 'TIMEZONE=' + offSet + '; expires=' + theDate.toUTCString() + '; path=/'
+            </script>
+
+            <script type="text/javascript" src="//cdn.thisiswaldo.com/static/js/9424.js"></script>
+
+
+
+
+
+
+
+
+    </head>
+
+    <body> 
+
+        <div id="phone-nav-toggle" class="row show-for-small-only expanded">
+            <div class="small-2 columns">
+                <a id="left-menu" href="#left-column" class="lightLink"><i class="fa fa-bars fa-2x"></i></a>
+            </div>
+            <div class="small-8 columns end">
+                <a href="/" title="Go to Home Page"><img src="/images/logo.png" alt="Banjo Hangout Logo"></a>
+            </div>
+        </div><!--phone-nav-->
+
+        <div class="expanded collapse row" data-equalizer="main">
+            <div id="left-column" class="fixed-width small-12 sidr columns" data-equalizer-watch="main">
+
+                <!-- move script right after element is rendered so users on slower devices don't have to wait for the entire page to load before they can toggle the mobile sidebar menu -->
+                <script>
+                    $('#left-menu').sidr({
+                                            name: 'left-column',
+                                            side: 'left'
+                                        });
+                </script>
+
+                <div class="scrollerLeft" >
+                    <div class="medium-login">
+
+                        <div class="user-profile expanded pad10Right pad10Left row">
+                            <div class="small-12 columns">
+                                <div class="show-for-small-only"><br></div>
+
+                                <form method="post" action="/login/" name="thisform">
+
+
+                                    <input type="hidden" name="redir" value="/tab/browse.asp?m=byletternum&v=num">
+                                    <input type="hidden" name="refer" value="">
+
+
+                                    <input name="Name" type="text" size="20" maxlength="50" placeholder="Username" value="" />
+                                    <input class="noMargin" name="Password" type="password" size="20" maxlength="50" placeholder="Password" />
+
+                                    <div class="row collapse">
+                                        <div class="columns small-12 text-left">
+                                            <p class="noMargin small"><label for="member_login_save_password" class="white"><input id="member_login_save_password" name="SavePassword" type="checkbox" value="true" checked class="noSpacing" /> Save Password</label></p>
+                                        </div>
+                                    </div>                            
+
+                                    <div class="row collapse">
+
+                                        <div class="column small-12">
+                                            <input class="small button noMargin" style="width:100%;" name="submit" type="submit" value="Log In" />
+                                        </div>                                       
+                                    </div>
+
+                                    <div class="row collapse">
+                                        <div class="column small-12 text-center">
+                                            <p class="small "><a href="/pages/login/forgot.asp">Forgot Password</a></p>
+
+
+
+                                            <input class="small button noMargin"  style="width:100%;background-color:#229966;margin-bottom:20px;" name="submit" type="button" onclick="location.href='/login/profile.asp';" value="Sign Up" />
+                                        </div>
+                                    </div>      
+
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    <a class="hide-for-small-only" href="/" title="Go to Home Page"><img src="/images/logo.png" alt="Banjo Hangout Logo"></a>
+                    <div class="rule gradient hide-for-small-only"></div>
+                    <!--<ul class="vertical dropdown menu" data-dropdown-menu>-->
+
+                    <div class="show-for-small-only">
+
+                        <div class="user-profile expanded pad10Right pad10Left row">
+                            <div class="small-12 columns">
+                                <div class="show-for-small-only"><br></div>
+
+                                <form method="post" action="/login/" name="thisform">
+
+
+                                    <input type="hidden" name="redir" value="/tab/browse.asp?m=byletternum&v=num">
+                                    <input type="hidden" name="refer" value="">
+
+
+                                    <input name="Name" type="text" size="20" maxlength="50" placeholder="Username" value="" />
+                                    <input class="noMargin" name="Password" type="password" size="20" maxlength="50" placeholder="Password" />
+
+                                    <div class="row collapse">
+                                        <div class="columns small-12 text-left">
+                                            <p class="noMargin small"><label for="member_login_save_password" class="white"><input id="member_login_save_password" name="SavePassword" type="checkbox" value="true" checked class="noSpacing" /> Save Password</label></p>
+                                        </div>
+                                    </div>                            
+
+                                    <div class="row collapse">
+
+                                        <div class="column small-12">
+                                            <input class="small button noMargin" style="width:100%;" name="submit" type="submit" value="Log In" />
+                                        </div>                                       
+                                    </div>
+
+                                    <div class="row collapse">
+                                        <div class="column small-12 text-center">
+                                            <p class="small "><a href="/pages/login/forgot.asp">Forgot Password</a></p>
+
+
+
+                                            <input class="small button noMargin"  style="width:100%;background-color:#229966;margin-bottom:20px;" name="submit" type="button" onclick="location.href='/login/profile.asp';" value="Sign Up" />
+                                        </div>
+                                    </div>      
+
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <ul class="vertical dropdown menu" data-dropdown-menu>
+
+                        <li><a href="/forum" class="hide-for-small-only">Forums</a>         
+                            <a href="/forum" class="show-for-small-only submenu-button">Forums</a>
+
+                            <ul class="menu submenu show-for-small-only" style="display:none;">
+                                <li><a href="/forum/"><strong>Browse Forums</strong></a></li>         
+                                <li><a href="/forum/active.asp">Active Topics</a></li>
+                                <li><a href="/forum/newpost.asp">Post New Topic</a></li>
+                                <!--<li><a href="/groups">Groups</a></li>-->
+                                <li><a href="/forum/subscription_list.asp">Subscriptions</a></li>
+                                <li><a href="/forum/moderators.asp">Moderators</a></li>
+                                <li><a href="/forum/rules.asp">Rules &amp; Guidelines</a></li>
+                                <li><a href="/groups/">Groups</a></li>
+                            </ul>
+
+                            <div class="row hide-for-small-only">
+                                <div class="small-4 columns">
+                                    <ul class="menu vertical">
+                                        <li><a href="/forum/" class="bold">Browse Forums</a></li>
+                                        <li><a href="/forum/active.asp">Active Topics</a></li>
+                                        <li><a href="/forum/newpost.asp">Post New Topic</a></li>
+                                        <!--<li><a href="/groups">Groups</a></li>-->
+                                    </ul>
+                                </div>
+                                <div class="small-4 columns">
+                                    <ul class="menu vertical">
+                                        <li><a href="/forum/subscription_list.asp">Subscriptions</a></li>
+                                        <li><a href="/forum/moderators.asp">Moderators</a></li>
+                                        <li><a href="/forum/rules.asp">Rules &amp; Guidelines</a></li>
+                                        <li><a href="/myhangout/chat.asp">Hangout Chatroom</a></li>
+                                        <li><a href="/groups/">Groups</a></li>
+                                    </ul>
+                                </div>
+                                <div class="small-4 columns">
+                                    <!--<h3>Search the Forums</h3>-->
+
+
+                                    <form action="/pages/search-parse.asp">
+                                        <input type="hidden" name="cx" value="003343045014085398078:ckok8j6qu0e" />
+                                        <input type="hidden" name="cof" value="FORID:9" />
+                                        <input type="hidden" name="ie" value="UTF-8" />     
+
+                                        <input name="query" type="text" style="margin-bottom:7px;" autocomplete="off" placeholder="Search Forums"/>
+                                        <p style="margin:0px;">
+                                        <label style="display:inline"><input type="radio" name="refine" value="forum" checked="checked" />All Topics&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> <label style="display:inline"><input type="radio" name="refine" value="active_topics" />Active Topics</label>
+                                        </p>
+                                        <input type="submit" name="submit" value="Search" style="width:100%" class="button" />
+
+                                    </form>
+
+
+
+
+
+                                </div>
+                            </div><!--row hide-for-small-only--> 
+                        </li>
+                        <li>
+                            <a href="/classifieds/" class="hide-for-small-only">Marketplace</a>
+                            <a href="/classifieds/" class="show-for-small-only submenu-button">Marketplace</a>
+
+                            <ul class="menu submenu show-for-small-only" style="display:none;">
+                                <li><a href="/classifieds">Classifieds</a></li> 
+
+
+                                <li><a href="/classifieds/start.asp">Post New Ad</a></li>
+
+
+
+                                <li><a href="/classifieds/rules/">Classified Rules</a></li>
+                                <li><a href="/luthiers/">Luthier Search</a></li>
+                                <li><a href="/store/">Hangout Store</a></li>
+                            </ul>
+
+                            <div class="row hide-for-small-only">
+                                <div class="small-4 columns">
+                                    <ul class="menu vertical">
+
+                                        <li><a href="/classifieds/" class="bold">Classifieds</a></li>
+
+                                        <li><a href="/classifieds/start.asp">Post New Ad</a></li>
+
+
+                                        <li><a href="/classifieds/rules/">Classified Rules</a></li>
+
+
+                                    </ul>
+
+                                    <div  id="market_navMain">
+                                        <!--<h3>Search the Marketplace</h3>-->                                
+
+                                        <input name="query" type="text" id="market_quicksearch" placeholder="Search Classifieds"/>
+                                    </div>
+                                </div>
+                                <div class="small-4 columns">
+                                    <ul class="menu vertical">
+                                        <!-- Main Classifieds Categories -->
+                                        <h3>Browse Classifieds</h3>
+
+                                        <li><a href="/classifieds/search.asp?m=bycat&v=1">Banjos</a></li>
+
+                                        <li><a href="/classifieds/search.asp?m=bycat&v=2">Banjo Parts</a></li>
+
+                                        <li><a href="/classifieds/search.asp?m=bycat&v=3">Banjo Accessories</a></li>
+
+                                        <li><a href="/classifieds/search.asp?m=bycat&v=8">Banjo-Related Services</a></li>
+
+                                        <li><a href="/classifieds/search.asp?m=bycat&v=5">Instructional Materials</a></li>
+
+                                        <li><a href="/classifieds/search.asp?m=bycat&v=6">Music (CD's, LP's, etc)</a></li>
+
+                                        <li><a href="/classifieds/search.asp?m=bycat&v=4">Internet Auctions</a></li>
+
+                                        <li><a href="/classifieds/search.asp?m=bycat&v=7">Other Instruments</a></li>
+
+
+                                    </ul>
+                                </div>
+                                <div class="small-4 columns" id="market_navMain">
+                                    <ul class="menu vertical">
+
+                                        <li><a href="/luthiers/" class="bold">Luthier Search</a></li>
+                                        <li><a href="/store/" class="bold">Hangout Merchandise</a></li>
+
+                                    </ul>
+
+                                </div>
+                            </div><!--row hide-for-small-only-->  
+                        </li>
+
+                        <li>
+                            <a href="/lessons" class="hide-for-small-only">Learn</a>
+                            <a href="/lessons" class="show-for-small-only submenu-button">Learn</a>
+
+                            <ul class="menu submenu show-for-small-only" style="display:none;">
+                                <li><a href="/tab/">Tabs</a></li>
+                                <li><a href="/lessons/catalo/g">Video Lessons</a></li>
+                                <li><a href="/teachers/">Find a Teacher</a></li>
+                                <li><a href="/lessons/">Lesson Links</a></li>
+                                <li><a href="/lessons/video/">More Video Lessons</a></li>
+
+                                <li><a href="/events/contests.asp">The Banjo Challenge</a></li>
+
+                            </ul>
+
+                            <div class="row hide-for-small-only">
+                                <div class="small-4 columns">
+                                    <!--<h3>Tabs</h3>-->
+                                    <div  id="tab_navMain">
+                                        <!--<h3>Search the Marketplace</h3>-->                             
+
+                                        <input name="query" type="text" id="tab_quicksearch" placeholder="Search Tabs"/>
+
+                                    </div>
+
+                                    <ul class="menu vertical">
+                                        <li><a href="/tab/">Banjo Tab Library</a></li>
+
+                                    </ul>
+                                </div>
+                                <div class="small-4 columns">
+                                    <h3><a href="/lessons/catalog/">Video Lessons</a></h3>
+                                    <p>DVD-quality lessons (including tabs/sheet music) available for immediate viewing on any device.</p>
+
+                                    <ul class="menu vertical">
+                                        <li><a href="/lessons/">Lesson Links</a></li>
+                                        <li><a href="/lessons/video/">More Video Lessons</a></li>
+
+                                        <li><a href="/events/contests.asp">The Banjo Challenge</a></li>
+
+
+                                    </ul>
+                                </div>
+                                <div class="small-4 columns">
+                                    <h3><a href="/teachers/">Find a Teacher</a></h3>
+                                    <p>Take your playing to the next level with the help of a local or online banjo teacher.</p>
+
+
+                                    <h3><a href="/lists/">Email Newsletter</a></h3>
+                                    <p>Weekly newsletter includes free lessons, favorite member content, banjo news and more.</p>
+
+                                </div>
+                            </div><!--row hide-for-small-only-->
+                        </li>
+                        <li>
+
+                            <a href="javascript:;" class="hide-for-small-only">Media</a>
+                            <a href="javascript:;" class="show-for-small-only submenu-button">Media</a>
+
+                            <ul class="menu submenu show-for-small-only" style="display:none;">
+                                <li><a href="/media">Newest Additions</a></li>
+                                <li><a href="/myhangout/videos.asp">Video Library</a></li>
+                                <li><a href="/myhangout/music-search.asp">MP3 Library</a></li>
+                                <li><a href="javascript:;" onClick="var window_MEDIA=window.open('https://www.banjohangout.org/myhangout/media-player/audio_player.asp' , 'mediawindow','resizable=yes,WIDTH=480,HEIGHT=680');window_MEDIA.focus();return false;">Jukebox</a></li>
+                            </ul>
+
+                            <div class="row narrow hide-for-small-only">
+                                <div class="small-12 columns">
+                                    <ul class="menu vertical">
+
+
+                                        <div class="small-12 columns">
+
+                                            <li><a href="/media">Newest Additions</a></li>
+                                            <li><a href="/myhangout/videos.asp">Video Library</a></li>
+                                            <li><a href="/myhangout/music-search.asp">MP3 Library</a></li>
+                                            <li><a href="javascript:;" onClick="var window_MEDIA=window.open('https://www.banjohangout.org/myhangout/media-player/audio_player.asp' , 'mediawindow','resizable=yes,WIDTH=480,HEIGHT=680');window_MEDIA.focus();return false;">Jukebox </a></li>
+                                        </div>
+                                        <div class="small-6 columns">
+
+                                        </div>
+
+                                    </ul>
+                                </div>
+                            </div><!--row hide-for-small-only--> 
+                        </li>
+                        <li><a href="javascript:;" class="hide-for-small-only">More</a>
+                            <a href="javascript:;" class="show-for-small-only submenu-button">More</a>
+
+                            <ul class="menu submenu show-for-small-only" style="display:none;">
+                                <li><a href="/myhangout/">Member Homepages</a></li>
+                                <li><a href="/blogcat/0">Blogs</a></li>
+                                <li><a href="/help/helpFull.asp">Help/FAQ</a></li>
+                                <li><a href="/reviews/">Reviews</a></li>
+                                <li><a href="/links/">Links</a></li>
+                                <li><a href="/events/">Calendar</a></li>
+                                <li><a href="/drawing/">Enter the Drawing</a></li>
+                                <li><a href="/store/details.asp?id=10">Players Union</a></li>
+                                <li><a href="/sponsors/donate.asp">Donate</a></li>
+                                <li><a href="/sponsors/tell-a-friend.asp">Tell a Friend</a></li>
+                                <li><a href="/sponsors/">Advertising</a></li>
+                                <li><a href="/sponsors/list.asp">Our Sponsors</a></li>
+                                <li><a href="/pages/contact.asp">Contact Us</a></li>
+                            </ul>
+
+                            <div class="row medium hide-for-small-only">
+                                <div class="small-6 columns">
+                                    <ul class="menu vertical">
+
+                                        <li><a href="/myhangout/">Member Homepages</a></li>
+                                        <li><a href="/blogcat/0">Blogs</a></li>
+
+
+
+                                        <li><b><a href="/reviews/">Reviews</a></b></li>
+
+
+                                        <li><b><a href="/events/">Calendar</a></b></li>
+
+                                        <li><a data-open="helpModal">Help/FAQ</a></li>
+                                        <li><a href="/links/">Links</a></li>
+                                        <li><a href="/drawing/">Enter the Drawing</a></li>
+                                    </ul>
+                                </div>
+                                <div class="small-6 columns">
+                                    <h3>Support this Site</h3>
+                                    <ul class="menu vertical">
+                                        <li><a href="/store/details.asp?id=10">Players Union</a></li>
+                                        <li><a href="/sponsors/donate.asp">Donate</a></li>
+                                        <li><a href="/sponsors/tell-a-friend.asp">Tell a Friend</a></li>
+                                        <li><a href="/sponsors/">Advertising</a></li>
+                                        <li><a href="/sponsors/list.asp">Our Sponsors</a></li>
+                                        <li><a href="/pages/contact.asp">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </div><!--row hide-for-small-only-->
+                        </li>
+                        <li class="clearfix">
+                            <form id="cse-search-box" onsubmit="if ($('#mainSearch').val()=='') {return false;}" autocomplete="off" name="searchform" action="/pages/search-parse.asp">
+
+
+
+                                <script>
+                                    function iosScrollFix(el) {    
+
+                                                                            var ua = window.navigator.userAgent;
+                                                                            var iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
+                                                                            var webkit = !!ua.match(/WebKit/i);
+                                                                            var iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
+
+                                                                            if (iOSSafari) {
+
+                                                                                                                    var rect = el.getBoundingClientRect(),
+                                                                                                                        scrollTop = window.pageYOffset;
+                                                                                                                    console.log(scrollTop);
+
+                                                                                                                    if(window.innerHeight > window.innerWidth){
+                                                                                                                                                            window.scrollTo(0,rect.top + scrollTop - 170);
+                                                                                                                                                        } else {
+                                                                                                                                                                                                window.scrollTo(0,rect.top + scrollTop - 100);
+                                                                                                                                                                                            }
+                                                                                                                }
+                                                                        }</script>
+
+                                <input type="hidden" name="cx" value="003343045014085398078:ckok8j6qu0e" />
+                                <input type="hidden" name="cof" value="FORID:9" />
+                                <input type="hidden" name="ie" value="UTF-8" />
+
+                                <input placeholder="Search" onFocus="iosScrollFix(this);" autocomplete="off" name="query" id="mainSearch" type="text"/>                       
+                                <button name="sa" VALUE="Search"><img src="/img/icon-search.png" /></button>
+
+
+                                <div id="searchFilter">
+                                    Restrict search to:<br>
+                                    <label><input type="radio" name="refine" value="forum" checked> Forum</label>
+                                    <label><input type="radio" name="refine" value="classifieds"> Classifieds</label>
+                                    <label><input type="radio" name="refine" value="tab"> Tab</label>
+                                    <label><input type="radio" name="refine" value="other"> All other pages</label>
+                                </div>
+
+                            </form>
+                        </li>
+                    </ul><!--dropdown menu-->
+
+                    <div class="rule gradient hide-for-small-only"></div>
+
+
+                    <div class="premiere-sponsors">
+                        <div class="hide-for-small-only"><p>Premier Sponsors</p></div>
+                        <ul class="menu vertical">
+
+
+                            <li class="grow"><a target="_blank" href="/pages/sponsors/counter.asp?goto=https://www.murphymethod.com/-[]-adid=796" title="The Murphy Method"><img width="150" alt="The Murphy Method" src="/img/ads/small/murphy.gif"></a></li>
+
+                            <li class="grow"><a target="_blank" href="/pages/sponsors/counter.asp?goto=https://www.elderly.com/acoustics/banjos///utm_source=banjo%20hangoutAMPERutm_medium=adsAMPERutm_campaign=banjohangout1-[]-adid=799" title="Elderly Instruments - Since 1972"><img width="150" alt="Elderly Instruments - Since 1972" src="/img/ads/small/elderly-2020.png"></a></li>
+
+                            <li class="grow"><a target="_blank" href="/pages/sponsors/counter.asp?goto=https://www.sloanbanjos.com/-[]-adid=836" title="Sloan Banjos - since 1959"><img width="150" alt="Sloan Banjos - since 1959" src="/img/ads/small/sloan2020.gif"></a></li>
+
+                            <li class="grow"><a target="_blank" href="/pages/sponsors/counter.asp?goto=https://www.deeringbanjos.com/-[]-adid=800" title="Deering Banjos"><img width="150" alt="Deering Banjos" src="/img/ads/small/deering.jpg"></a></li>
+
+                            <li class="grow"><a target="_blank" href="/pages/sponsors/counter.asp?goto=https://glenncronkhite.com/product/banjo-[]-adid=854" title="Glenn Cronkhite Custom Banjo Cases"><img width="150" alt="Glenn Cronkhite Custom Banjo Cases" src="/img/ads/small/glenncronkhite.jpg"></a></li>
+
+
+
+                        </ul>
+                    </div>
+                    <!--premiere-sponsors-->
+
+
+
+                    <p class="user-count" align="center"><a class="lightLink" href="/pages/members-online.asp">521<br><span>Banjo Lovers Online</span></a></p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa fa-facebook fa-lg"></i></a><a href="/feeds"><i class="fa fa-feed fa-lg"></i></a>
+                    </div><br>
+                </div>
+            </div><!--left-column-->
+
+            <div id="fixed-width-left" class="small-12 columns" data-equalizer-watch="main">
+                <div class="expanded collapse row" data-equalizer>
+
+
+                    <div class='row zebra rowPadded addtop'>
+                        <div class='columns small-12 medium-12'><p class='noSpacing'><a style='color:#224488;text-decoration:underline;font-weight:bold;' href='/pages/sponsors/counter.asp?goto=https://pegheadnation.com/string-school/courses/bluegrass-banjo/QUESTIONutm_source=HangoutAMPERutm_medium=bannerAMPERutm_campaign=HangoutAMPERutm_content=Bill-[]-adid=640'>Peghead Nation Instructor Bill Evans</a><br>
+                            <a style="text-decoration:none;color:#000" href='/pages/sponsors/counter.asp?goto=https://pegheadnation.com/string-school/courses/bluegrass-banjo/QUESTIONutm_source=HangoutAMPERutm_medium=bannerAMPERutm_campaign=HangoutAMPERutm_content=Bill-[]-adid=640'>Get started with Bill's Beginning Banjo course, or hone your bluegrass chops in Bluegrass Banjo.</a></p>
+                        </div>
+                    </div>					
+
+
+
+                    <div id="center-column" class="small-12 medium-8 large-9 columns" style="width:100%" data-equalizer-watch>
+
+                        <!-- center column begin -->
+
+                        <div class="row">
+                            <div class="column">
+
+
+
+                                <div ID="pms" style="padding:10px;"><span style="color:white;font-family:helvetica, arial, sans-serif"><a style="color:white;text-decoration:none;" href="/login/privacy-policy.asp">We use cookies to ensure that we give you the best experience on our website. If you continue, we will assume that you agree to <span style="text-decoration: underline;">our privacy policy</span> which includes details of cookie usage.
+                                        </a></span>
+
+                                        <div style="float:right"><span style="color:white;font-family:helvetica, arial, sans-serif;font-size:11px;">(<a style="color:#FFFFAA" href="/pages/hidecookienotice.asp?redir=/tab/browse.asp?m=byletternum&v=num">hide this</a>)</span></div></div><br />
+
+
+                            </div>
+                        </div>
+
+
+                        <div id="secondary-nav" class="row padding">
+                            <div class="small-12 columns">
+
+                                <h2 class="float-left">Browse Tabs By First Letter: (#s)</h2>
+
+
+
+                            </div>
+                        </div>
+                        <!--secondary-nav row-->
+
+
+
+
+                        <div class="row">
+                            <div class="columns">
+
+
+                                <script language="Javascript" src="/global/ratings.js"></script>
+
+
+                                <script type="text/javascript" language="javascript">
+
+                                    $(function() {
+
+                                                                            $("#quicksearch").autocomplete({
+                                                                                                                    minLength: 2,
+                                                                                                                    source: function(request, response) {
+                                                                                                                                                            $.getJSON("/tab/tab_search_ajax.asp", {q: request.term, getTop: 15}, response);
+                                                                                                                                                        },
+                                                                                                                    open: function( event, ui) {
+                                                                                                                                                            if ($('li.ui-menu-item').size()!='1') {
+                                                                                                                                                                                                    $('li.ui-menu-item').addClass('zebra');
+
+                                                                                                                                                                                                    if ($('.ui-autocomplete > li').length > 15) {
+                                                                                                                                                                                                                                            var tempVal = $('.ui-widget-content li:last').text();
+                                                                                                                                                                                                                                            $('.ui-widget-content li:last').remove();
+                                                                                                                                                                                                                                            $('<li class="view-all zebra" role="menuitem"><a class="ui-corner-all" tabindex="-1" href="/w/tab/browse/m/bykeyword/v/' + escape($(this).val()) + '"><strong>' + tempVal + '</strong></a></li>').insertAfter($('li.ui-menu-item:last'));
+                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                    //set width of dropdown to width of input (wonder why not automatic?)
+                                                                                                                                                                                                    $('.ui-widget-content').css('width',$(this).css('width'));
+
+                                                                                                                                                                                                    //remove blue focus from main elements when hovering over 'other items' link
+                                                                                                                                                                                                    $('.ui-corner-all').mouseenter(function() {$('.ui-menu-item-wrapper').removeClass('ui-state-active');})
+                                                                                                                                                                                                }
+                                                                                                                                                        },
+                                                                                                                    select: function( event, ui ) { 
+                                                                                                                                                            if (ui.item.value!='0') {
+                                                                                                                                                                                                    location.href='/tab/browse.asp?m=detail&v=' + ui.item.value;
+                                                                                                                                                                                                }
+                                                                                                                                                            return false;
+                                                                                                                                                        },
+                                                                                                                    focus: function( event, ui ){
+                                                                                                                                                            return false;
+                                                                                                                                                        }
+                                                                                                                });
+
+                                                                        });
+
+                                    $(window).resize(function() {
+                                                                            $(".ui-autocomplete").css('display', 'none');
+                                                                        });
+
+                                </script>
+
+
+
+                                <div class="row">
+                                    <div class="column small-12">
+                                        <input placeholder="Quick Search" type="text" id="quicksearch" style="margin-bottom:0px" />
+
+                                        <a href="javascript:;" title="View Advanced Search Options" class="advancedSearchLink header2" onclick="$('#advancedSearch').toggle('medium'); $('.fa-sort-asc, .fa-sort-desc').toggle();"><h3>Advanced Search <i class="fa fa-sort-desc" aria-hidden="true"></i><i class="fa fa-sort-asc" aria-hidden="true" style="display: none"></i></h3></a>
+
+                                    </div>
+                                </div>
+
+                                <div class="row adForm" id="advancedSearch" style="display:none">
+                                    <div class="column">
+                                        <form method="get" action="/tab/browse.asp" style="margin:0px">
+                                            <input type="hidden" name="m" value="advanced">
+
+                                            <div class="row rowPadded zebra">
+                                                <div class="column small-12 medium-3">Genre</div>
+                                                <div class="column small-12 medium-9">
+
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabGenreID" value="1"> Bluegrass</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabGenreID" value="2"> Classical</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabGenreID" value="12"> Country</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabGenreID" value="3"> Fiddle/Celtic/Irish</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabGenreID" value="11"> Folk</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabGenreID" value="4"> Jazz</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabGenreID" value="10"> Old Time</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabGenreID" value="5"> Other</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabGenreID" value="6"> Popular</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabGenreID" value="7"> Ragtime</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabGenreID" value="13"> Rock</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabGenreID" value="8"> Traditional</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabGenreID" value="9"> Unknown/None Chosen</label></div>
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="row rowPadded zebra">
+                                                <div class="column small-12 medium-3">Playing Style</div>
+                                                <div class="column small-12 medium-9">
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabStyleID" value="1"> Unknown/None Chosen</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabStyleID" value="3"> Bluegrass (Scruggs) </label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabStyleID" value="5"> Clawhammer and Old-Time</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabStyleID" value="6"> 4-String (Tenor/Plectrum)</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabStyleID" value="7"> Classical</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabStyleID" value="8"> Other</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabStyleID" value="9"> Backing Track</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabStyleID" value="10"> Minstrel (Stroke Style)</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabStyleID" value="11"> Classic</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabStyleID" value="12"> Exercises and Licks</label></div>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="row rowPadded zebra">
+                                                <div class="column small-12 medium-3">Tuning</div>
+                                                <div class="column small-12 medium-9">
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabTuningID" value="1">  Standard Open G (gDGBD)</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabTuningID" value="15"> aDGBD</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabTuningID" value="9"> Chicago (DGBE)</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabTuningID" value="5"> Cm (gCGCEb)</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabTuningID" value="18"> Dm (aDFAD)</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabTuningID" value="4"> Double C (gCGCD)</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabTuningID" value="14"> Drop C (gCGBD)</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabTuningID" value="6"> Open C (gCGCE)</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabTuningID" value="17"> Open D (aDF#Ad)</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabTuningID" value="16"> Open D (f#DF#Ad)</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabTuningID" value="2"> Open Gm (gDGBbD)</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabTuningID" value="11"> Plectrum Open G (DGBD)</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabTuningID" value="10"> Plectrum Standard (CGBD)</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabTuningID" value="3"> Sawmill (gDGCD)</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabTuningID" value="13"> Tenor C (CGdg)</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabTuningID" value="12"> Tenor G (DGdg)</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabTuningID" value="8"> Tenor Irish (GDAE)</label></div>
+
+                                                    <div class="floatedListMed"><label><input type="checkbox" name="TabTuningID" value="7"> Tenor Standard (CGDA)</label></div>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="row rowPadded zebra">
+                                                <div class="column small-12 medium-3">Key</div>
+                                                <div class="column small-12 medium-9">
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabKeyID" value="1"> A</label></div>
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabKeyID" value="2"> A#/Bb</label></div>
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabKeyID" value="3"> B</label></div>
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabKeyID" value="4"> C</label></div>
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabKeyID" value="5"> C#/Db</label></div>
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabKeyID" value="6"> D</label></div>
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabKeyID" value="7"> D#/Eb</label></div>
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabKeyID" value="8"> E</label></div>
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabKeyID" value="9"> F</label></div>
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabKeyID" value="10"> F#/Gb</label></div>
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabKeyID" value="11"> G</label></div>
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabKeyID" value="12"> G#/Ab</label></div>
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabKeyID" value="13"> Am</label></div>
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabKeyID" value="14"> A#/Bbm</label></div>
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabKeyID" value="15"> Bm</label></div>
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabKeyID" value="16"> Cm</label></div>
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabKeyID" value="17"> C#/Dbm</label></div>
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabKeyID" value="18"> Dm</label></div>
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabKeyID" value="19"> D#/Ebm</label></div>
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabKeyID" value="20"> Em</label></div>
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabKeyID" value="21"> Fm</label></div>
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabKeyID" value="22"> F#/Gbm</label></div>
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabKeyID" value="23"> Gm</label></div>
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabKeyID" value="24"> G#/Abm</label></div>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="row rowPadded zebra">
+                                                <div class="column small-12 medium-3">Difficulty</div>
+                                                <div class="column small-12 medium-9">
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabDifficulty" value="1">Beginner</label></div>
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabDifficulty" value="2">Intermediate</label></div>
+
+                                                    <div class="floatedListSm"><label><input type="checkbox" name="TabDifficulty" value="3"> Expert</label></div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="row rowPadded">
+                                                <div class="column small-12 text-right">
+                                                    <input name="submit" type="submit" style="margin:0px" class="button" value="Search">
+                                                </div>
+                                            </div>		
+
+                                        </form>
+
+                                    </div>
+                                </div>
+
+                                <div class="row rowPadded">
+                                    <div class="column small-12 medium-9">
+                                        <h2>Alphabetical: <span style="font-size:14px"><strong><a href="/w/tab/browse/m/byletter/v/A" title="Browse by letter A">A</a>
+                                                    <a href="/w/tab/browse/m/byletter/v/B" title="Browse by letter B">B</a>
+                                                    <a href="/w/tab/browse/m/byletter/v/C" title="Browse by letter C">C</a>
+                                                    <a href="/w/tab/browse/m/byletter/v/D" title="Browse by letter D">D</a>
+                                                    <a href="/w/tab/browse/m/byletter/v/E" title="Browse by letter E">E</a>
+                                                    <a href="/w/tab/browse/m/byletter/v/F" title="Browse by letter F">F</a>
+                                                    <a href="/w/tab/browse/m/byletter/v/G" title="Browse by letter G">G</a>
+                                                    <a href="/w/tab/browse/m/byletter/v/H" title="Browse by letter H">H</a>
+                                                    <a href="/w/tab/browse/m/byletter/v/I" title="Browse by letter I">I</a>
+                                                    <a href="/w/tab/browse/m/byletter/v/J" title="Browse by letter J">J</a>
+                                                    <a href="/w/tab/browse/m/byletter/v/K" title="Browse by letter K">K</a>
+                                                    <a href="/w/tab/browse/m/byletter/v/L" title="Browse by letter L">L</a>
+                                                    <a href="/w/tab/browse/m/byletter/v/M" title="Browse by letter M">M</a>
+                                                    <a href="/w/tab/browse/m/byletter/v/N" title="Browse by letter N">N</a>
+                                                    <a href="/w/tab/browse/m/byletter/v/O" title="Browse by letter O">O</a>
+                                                    <a href="/w/tab/browse/m/byletter/v/P" title="Browse by letter P">P</a>
+                                                    <a href="/w/tab/browse/m/byletter/v/Q" title="Browse by letter Q">Q</a>
+                                                    <a href="/w/tab/browse/m/byletter/v/R" title="Browse by letter R">R</a>
+                                                    <a href="/w/tab/browse/m/byletter/v/S" title="Browse by letter S">S</a>
+                                                    <a href="/w/tab/browse/m/byletter/v/T" title="Browse by letter T">T</a>
+                                                    <a href="/w/tab/browse/m/byletter/v/U" title="Browse by letter U">U</a>
+                                                    <a href="/w/tab/browse/m/byletter/v/V" title="Browse by letter V">V</a>
+                                                    <a href="/w/tab/browse/m/byletter/v/W" title="Browse by letter W">W</a>
+                                                    <a href="/w/tab/browse/m/byletter/v/X" title="Browse by letter X">X</a>
+                                                    <a href="/w/tab/browse/m/byletter/v/Y" title="Browse by letter Y">Y</a>
+                                                    <a href="/w/tab/browse/m/byletter/v/Z" title="Browse by letter Z">Z</a>
+                                                    &nbsp;<a href="/tab/browse.asp?m=byletternum&v=num" title="Browse by numeric">#</a></strong></h2>			
+                                    </div>
+                                    <div class="column small-12 medium-3">
+                                        <h2><a href="/w/tab/browse/m/newest/banjo/tabs/">Newest Additions</a></h2>
+                                    </div>
+                                </div>
+
+                                <div class="row rowPadded">
+
+                                    <div class="column small-12 text-center">
+
+                                        You must <a href="/login/">log into your myHangout account</a> to post a tab.
+
+                                    </div>
+                                </div><div class='zebra'></div>
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=13520'>12kleinePräludien-no11</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Classical&nbsp;&nbsp;<strong>Style:</strong> Bluegrass (Scruggs) &nbsp;&nbsp;<strong>Key:</strong> G&nbsp;&nbsp;<strong>Tuning:</strong>  Standard Open G (gDGBD)&nbsp;&nbsp;<strong>Difficulty:</strong> Intermediate<br>Posted by <a href='/my/Ibalesh'>Ibalesh</a>, updated: 6/18/2010
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-12kleinepräludi-13520-343561862010.tef'>TABLEDIT</a></span><br><i>Notes: bowed double bass is not included yet</i></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=11547'>12th of April</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Bluegrass&nbsp;&nbsp;<strong>Style:</strong> Bluegrass (Scruggs) &nbsp;&nbsp;<br>Posted by <a href='/my/schlange'>schlange</a>, updated: 6/9/2006 - 1 <a href='/tab/browse.asp?m=detail&v=11547#comments'>Member Comments</a>
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/12th_of_april-2666.pdf'>PDF</a></span></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=13692'>12th of April</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Bluegrass&nbsp;&nbsp;<strong>Style:</strong> Bluegrass (Scruggs) &nbsp;&nbsp;<strong>Key:</strong> G&nbsp;&nbsp;<strong>Tuning:</strong>  Standard Open G (gDGBD)&nbsp;&nbsp;<strong>Difficulty:</strong> Intermediate<br>Posted by <a href='/my/rmlong'>rmlong</a>, updated: 8/10/2010
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-12th-of-april-13692-4428201082010.pdf'>PDF</a></span></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=19403'>12th of April</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Bluegrass&nbsp;&nbsp;<strong>Style:</strong> Bluegrass (Scruggs) &nbsp;&nbsp;<strong>Key:</strong> G&nbsp;&nbsp;<strong>Tuning:</strong>  Standard Open G (gDGBD)&nbsp;&nbsp;<strong>Difficulty:</strong> Intermediate<br>Posted by <a href='/my/Larry Banjo'>Larry Banjo</a>, updated: 9/25/2013
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-12th-of-april-19403-123132592013.gp5'>GUITAR-PRO 5</a> | <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-12th-of-april-19403-56132592013.gp5'>GUITAR-PRO 5</a></span></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=21039'>1-4-1-5-1 Tag Ending</a></strong></h2><p class='noSpacing'><span class='small'><strong>Style:</strong> Bluegrass (Scruggs) &nbsp;&nbsp;<strong>Key:</strong> G&nbsp;&nbsp;<strong>Tuning:</strong>  Standard Open G (gDGBD)&nbsp;&nbsp;<strong>Difficulty:</strong> Intermediate<br>Posted by <a href='/my/Jacob Underwood'>Jacob Underwood</a>, updated: 2/7/2015
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-1-4-1-5-1-tag-e-21039-435616722015.pdf'>PDF</a></span><br><i>Notes: Here is a steel guitar ending that Allen Shelton frequently played on banjo.  It became a part of the Jim & Jesse sound and was used by their later banjo players as well.  If you just remember "1-4-1-5-1," you can use this in any major key.  The timing is the same as most standard endings; only the chord progression in different.</i></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=22696'>19 Mile Overhead</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Bluegrass&nbsp;&nbsp;<strong>Style:</strong> Bluegrass (Scruggs) &nbsp;&nbsp;<strong>Key:</strong> A&nbsp;&nbsp;<strong>Tuning:</strong>  Standard Open G (gDGBD)&nbsp;&nbsp;<strong>Difficulty:</strong> Intermediate<br>Posted by <a href='/my/corcoran'>corcoran</a>, updated: 6/6/2020 - 1 <a href='/tab/browse.asp?m=detail&v=22696#comments'>Member Comments</a>
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-19-mile-overhea-22696-17338662020.tef'>TABLEDIT</a></span><br><i>Notes: 19 Mile Overhead is a tune I wrote in the 1970s, and you can find a recording of it, from a practice tape of that era, on the Media section of my BHO page.  The tune is structured AABB, and you should capo up 2 to play it in the key of A.  Note that in British Columbia “overheads” are highway bridges over railroad right-of-way, and 19 Mile Overhead is somewhere near Revelstoke, B.C.  I’ll take a wild stab in the dark and guess that it is 19 miles from the town.</i></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=24060'>1922 Blues by Charlie Parr: Clawhammer</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Folk&nbsp;&nbsp;<strong>Style:</strong> Clawhammer and Old-Time&nbsp;&nbsp;<strong>Key:</strong> G&nbsp;&nbsp;<strong>Tuning:</strong>  Standard Open G (gDGBD)&nbsp;&nbsp;<strong>Difficulty:</strong> Beginner<br>Posted by <a href='/my/TheDuck'>TheDuck</a>, updated: 1/11/2020
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-1922-blues-by-c-24060-48137412020.tef'>TABLEDIT</a> | <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-1922-blues-by-c-24060-38137412020.pdf'>PDF</a></span><br><i>Notes: Clawhammer version of the 2ftl tab I posted. Originally by Charlie Parr. I typically do the ending bit (the last 3 measures) for another 2 measures before going in to another verse. I also sometimes substitute a regular D for the D7 near the end. 
+
+                                        Charlie plays it (on guitar) with a capo on the 2nd fret so if you want to really sound like him that might be a good call.</i></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=23860'>1922 Blues-Charlie Parr</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Folk&nbsp;&nbsp;<strong>Style:</strong> Clawhammer and Old-Time&nbsp;&nbsp;<strong>Key:</strong> A&nbsp;&nbsp;<strong>Tuning:</strong>  Standard Open G (gDGBD)&nbsp;&nbsp;<strong>Difficulty:</strong> Beginner<br>Posted by <a href='/my/TheDuck'>TheDuck</a>, updated: 8/24/2019
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-1922-blues-char-23860-122892482019.tef'>TABLEDIT</a> | <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-1922-blues-char-23860-232892482019.pdf'>PDF</a></span><br><i>Notes: 2FTL. Capo 2, 5th string 7
+
+                                        Based on the guitar tab here: 
+                                        https://tabs.ultimate-guitar.com/tab/charlie_parr/1922_tabs_1822315</i></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=13712'>1952 Vincent Black Lightning</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Bluegrass&nbsp;&nbsp;<strong>Style:</strong> Bluegrass (Scruggs) &nbsp;&nbsp;<strong>Tuning:</strong>  Standard Open G (gDGBD)&nbsp;&nbsp;<strong>Difficulty:</strong> Beginner<br>Posted by <a href='/my/twothphry'>twothphry</a>, updated: 8/17/2010 - 2 <a href='/tab/browse.asp?m=detail&v=13712#comments'>Member Comments</a>
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-1952-vincent-bl-13712-234181782010.tef'>TABLEDIT</a></span></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=17039'>1952 Vincent Black Lightning</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Bluegrass&nbsp;&nbsp;<strong>Style:</strong> Bluegrass (Scruggs) &nbsp;&nbsp;<strong>Key:</strong> A#/Bb&nbsp;&nbsp;<strong>Tuning:</strong> Double C (gCGCD)&nbsp;&nbsp;<strong>Difficulty:</strong> Intermediate<br>Posted by <a href='/my/dpetervan'>dpetervan</a>, updated: 3/31/2012 - 6 <a href='/tab/browse.asp?m=detail&v=17039#comments'>Member Comments</a>
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-1952-vincent-bl-17039-3020163132012.tef'>TABLEDIT</a> | <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-1952-vincent-bl-17039-5351153132012.pdf'>PDF</a> | MIDI [<a title='Listen' href='#' onClick="var window_MEDIA=window.open('/myhangout/media-player/midi-player.asp?midifile=tab-1952-vincent-bl-17039-3454153132012.mid' , 'mediawindow','resizable=yes,WIDTH=400,HEIGHT=250');window_MEDIA.focus();return false;" title='1952 Vincent Black Lightning'>Play</a>] [<a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-1952-vincent-bl-17039-3454153132012.mid'>Download</a>]</span><br><i>Notes: Based on playing of Carson McKee (guitar) and Josh Turner (banjo) from their Youtube version http://www.youtube.com/watch?v=fQK2xFOAxrI&feature=g-hist&context=G224e38fAHT20pXQAAAA
+                                        Banjo tuned down one whole step, guitar capoed at 3rd fret.  Key of Bb.</i></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=19103'>2 finger thumb lead</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Old Time&nbsp;&nbsp;<strong>Style:</strong> Clawhammer and Old-Time&nbsp;&nbsp;<strong>Tuning:</strong>  Standard Open G (gDGBD)&nbsp;&nbsp;<strong>Difficulty:</strong> Beginner<br>Posted by <a href='/my/Scott J'>Scott J</a>, updated: 8/11/2013
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br> - <A href='http://www.banjohangout.org/group/twofingerpickers' target='_blank'>Download from banjohangout.org</A></span></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=22160'>20 Licks in D</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Bluegrass&nbsp;&nbsp;<strong>Style:</strong> Bluegrass (Scruggs) &nbsp;&nbsp;<strong>Key:</strong> D&nbsp;&nbsp;<strong>Tuning:</strong>  Standard Open G (gDGBD)&nbsp;&nbsp;<strong>Difficulty:</strong> Intermediate<br>Posted by <a href='/my/banjo1971'>banjo1971</a>, updated: 9/23/2016 - 2 <a href='/tab/browse.asp?m=detail&v=22160#comments'>Member Comments</a>
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-20-licks-in-d-22160-831212392016.pdf'>PDF</a> | <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-20-licks-in-d-22160-2531212392016.gp5'>GUITAR-PRO 5</a></span></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=22158'>20 Licks in G</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Bluegrass&nbsp;&nbsp;<strong>Style:</strong> Bluegrass (Scruggs) &nbsp;&nbsp;<strong>Key:</strong> G&nbsp;&nbsp;<strong>Tuning:</strong>  Standard Open G (gDGBD)&nbsp;&nbsp;<strong>Difficulty:</strong> Intermediate<br>Posted by <a href='/my/banjo1971'>banjo1971</a>, updated: 9/23/2016
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-20-licks-in-g-22158-1841202392016.pdf'>PDF</a> | <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-20-licks-in-g-22158-4341202392016.gp5'>GUITAR-PRO 5</a></span></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=23322'>26</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Folk&nbsp;&nbsp;<strong>Style:</strong> Other&nbsp;&nbsp;<strong>Key:</strong> D&nbsp;&nbsp;<strong>Tuning:</strong>  Standard Open G (gDGBD)&nbsp;&nbsp;<strong>Difficulty:</strong> Beginner<br>Posted by <a href='/my/caelum_scott'>caelum_scott</a>, updated: 9/12/2018
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-26-23322-4546181292018.pdf'>PDF</a></span></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=16796'>28th of January</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Old Time&nbsp;&nbsp;<strong>Style:</strong> Clawhammer and Old-Time&nbsp;&nbsp;<strong>Key:</strong> A&nbsp;&nbsp;<strong>Tuning:</strong> Sawmill (gDGCD)&nbsp;&nbsp;<strong>Difficulty:</strong> Expert<br>Posted by <a href='/my/carlb'>carlb</a>, updated: 2/16/2012 - 1 <a href='/tab/browse.asp?m=detail&v=16796#comments'>Member Comments</a>
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-28th-of-january-16796-20161622012.pdf'>PDF</a></span><br><i>Notes: Capo 2 to sound aEADE. Unusual fingering of the 5th string at the 7th fret to play one phrase.</i></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=21742'>28th of January (corrected)</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Old Time&nbsp;&nbsp;<strong>Style:</strong> Clawhammer and Old-Time&nbsp;&nbsp;<strong>Key:</strong> A&nbsp;&nbsp;<strong>Difficulty:</strong> Expert<br>Posted by <a href='/my/blanham'>blanham</a>, updated: 2/2/2016
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-28th-of-january-21742-532819222016.pdf'>PDF</a></span></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=16785'>2fourteen - Tony Trischka</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Bluegrass&nbsp;&nbsp;<strong>Style:</strong> Bluegrass (Scruggs) &nbsp;&nbsp;<strong>Key:</strong> G&nbsp;&nbsp;<strong>Tuning:</strong> Drop C (gCGBD)&nbsp;&nbsp;<strong>Difficulty:</strong> Expert<br>Posted by <a href='/my/JAH'>JAH</a>, updated: 3/15/2012 - 3 <a href='/tab/browse.asp?m=detail&v=16785#comments'>Member Comments</a>
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-2fourteen---ton-16785-2824101422012.tef'>TABLEDIT</a></span></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=17318'>4 Note Cells</a></strong></h2><p class='noSpacing'><span class='small'><strong>Style:</strong> Other&nbsp;&nbsp;<strong>Difficulty:</strong> Intermediate<br>Posted by <a href='/my/cgbnjo'>cgbnjo</a>, updated: 5/20/2012
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-4-note-cells-17318-425122052012.jpg'>JPEG</a></span><br><i>Notes: This is a right hand fingering excercise.  I created this when I noticed that some passages that are index or middle finger oriented were not coming out as neat and clean as thumb-led stuff.  All the possible 4-note loopable groupings are written out here.  In practice, you want to be able to play these on any strings, not just 1-3.</i></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=19465'>4 Wet Pigs</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Old Time&nbsp;&nbsp;<strong>Style:</strong> Clawhammer and Old-Time&nbsp;&nbsp;<strong>Key:</strong> G&nbsp;&nbsp;<strong>Tuning:</strong>  Standard Open G (gDGBD)&nbsp;&nbsp;<strong>Difficulty:</strong> Beginner<br>Posted by <a href='/my/Steelydan'>Steelydan</a>, updated: 10/1/2013 - 1 <a href='/tab/browse.asp?m=detail&v=19465#comments'>Member Comments</a>
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-4-wet-pigs-19465-19691102013.pdf'>PDF</a> - <A href='http://pages.suddenlink.net/steelydan/banjo/4wetpigs.pdf' target='_blank'>Download from pages.suddenlink.net</A></span><br><i>Notes: Here is an all time favorite. Thanks to Mike Iverson for tabbing this one. Mine is slightly different, I add drop-thumbs, but included the Mike Iverson alternate tabs. I've also included embedded links to Mike Iverson's banjo lesson mp3 and a link to the Bryan Bowers autoharp version (slightly different lyrics and definitely a different key). Mike Iverson Lyrics are shown.</i></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=12535'>40 Years Late</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Bluegrass&nbsp;&nbsp;<strong>Style:</strong> Bluegrass (Scruggs) &nbsp;&nbsp;<strong>Key:</strong> Cm&nbsp;&nbsp;<strong>Tuning:</strong> Cm (gCGCEb)&nbsp;&nbsp;<strong>Difficulty:</strong> Intermediate<br>Posted by <a href='/my/larrytanner'>larrytanner</a>, updated: 12/14/2009 - 1 <a href='/tab/browse.asp?m=detail&v=12535#comments'>Member Comments</a>
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-40-years-late-12535-18531514122009.tef'>TABLEDIT</a></span><br><i>Notes: Title cut from Butch Robbins album - 40 Years Late</i></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=19807'>42nd Street</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Unknown/None Chosen&nbsp;&nbsp;<strong>Style:</strong> Other&nbsp;&nbsp;<strong>Key:</strong> G&nbsp;&nbsp;<strong>Tuning:</strong>  Standard Open G (gDGBD)&nbsp;&nbsp;<strong>Difficulty:</strong> Intermediate<br>Posted by <a href='/my/Draak'>Draak</a>, updated: 11/22/2013
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-42nd-street-19807-6471822112013.pdf'>PDF</a></span></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=14145'>5 Miles to Town</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Old Time&nbsp;&nbsp;<strong>Style:</strong> Clawhammer and Old-Time&nbsp;&nbsp;<strong>Key:</strong> D&nbsp;&nbsp;<strong>Tuning:</strong> Double C (gCGCD)&nbsp;&nbsp;<strong>Difficulty:</strong> Intermediate<br>Posted by <a href='/my/Jim Pankey'>Jim Pankey</a>, updated: 11/2/2010 - 1 <a href='/tab/browse.asp?m=detail&v=14145#comments'>Member Comments</a>
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-5-miles-to-town-14145-2339212112010.tef'>TABLEDIT</a></span><br><i>Notes: Watch out for those extra beats in the B part.  Have fun!</i></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=15535'>5 X 8/Don Reno</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Bluegrass&nbsp;&nbsp;<strong>Style:</strong> Bluegrass (Scruggs) &nbsp;&nbsp;<strong>Key:</strong> G&nbsp;&nbsp;<strong>Tuning:</strong>  Standard Open G (gDGBD)&nbsp;&nbsp;<strong>Difficulty:</strong> Intermediate<br>Posted by <a href='/my/SCFActg'>SCFActg</a>, updated: 8/2/2011 - 1 <a href='/tab/browse.asp?m=detail&v=15535#comments'>Member Comments</a>
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-5-x-8-15535-2048162662011.tef'>TABLEDIT</a></span></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=21474'>8 More Miles to Louisville</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Old Time&nbsp;&nbsp;<strong>Style:</strong> Clawhammer and Old-Time&nbsp;&nbsp;<strong>Tuning:</strong>  Standard Open G (gDGBD)&nbsp;&nbsp;<strong>Difficulty:</strong> Beginner<br>Posted by <a href='/my/Cacklinhen'>Cacklinhen</a>, updated: 8/28/2015
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-8-more-miles-to-21474-84202882015.tef'>TABLEDIT</a></span></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=9921'>8th of January</a></strong></h2><p class='noSpacing'><span class='small'><br>Posted by <a href='/my/schlange'>schlange</a>, updated: 3/18/2006
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br> - <A href='http://bluegrassbanjo.org/xavier.html' target='_blank'>Download from bluegrassbanjo.org</A></span></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=11778'>8th of January</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Fiddle/Celtic/Irish&nbsp;&nbsp;<strong>Style:</strong> Other&nbsp;&nbsp;<strong>Key:</strong> D&nbsp;&nbsp;<strong>Tuning:</strong>  Standard Open G (gDGBD)&nbsp;&nbsp;<strong>Difficulty:</strong> Expert<br>Posted by <a href='/my/KI4PRK'>KI4PRK</a>, updated: 9/6/2009 - 2 <a href='/tab/browse.asp?m=detail&v=11778#comments'>Member Comments</a>
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-8th-of-january-11778-462816692009.tef'>TABLEDIT</a></span><br><i>Notes: The old fiddle tune, the 8th of January arranged for melodic style banjo. The first two breaks are exactly the same, and are in the melodic style with some slight variation on the melody. The third break presents an alternate way to play the melody, in single string style, as well as some more slight variations. Has a Rhythm Guitar & Bass backup track.</i></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=14669'>8th of January</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Bluegrass&nbsp;&nbsp;<strong>Style:</strong> 4-String (Tenor/Plectrum)&nbsp;&nbsp;<strong>Key:</strong> G&nbsp;&nbsp;<strong>Tuning:</strong> Tenor G (DGdg)&nbsp;&nbsp;<strong>Difficulty:</strong> Intermediate<br>Posted by <a href='/my/Mirek Tim Patek'>Mirek Tim Patek</a>, updated: 2/24/2011 - 1 <a href='/tab/browse.asp?m=detail&v=14669#comments'>Member Comments</a>
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-8th-of-january-14669-3827112422011.tef'>TABLEDIT</a></span></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=20425'>9 miles from Gundagai</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Folk&nbsp;&nbsp;<br>Posted by <a href='/my/RJWMitchell'>RJWMitchell</a>, updated: 5/6/2014
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-9-miles-from-gu-20425-404522252014.pdf'>PDF</a> | <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-9-miles-from-gu-20425-244822252014.pdf'>PDF</a> | <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-9-miles-from-gu-20425-344822252014.pdf'>PDF</a></span><br><i>Notes: Capo at 3rd fret, Capo 5th string at 7th fret. leaad sheet plus Tabs for both melody and for triplets</i></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=21842'>9 miles from Gundagai</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Folk&nbsp;&nbsp;<strong>Style:</strong> Clawhammer and Old-Time&nbsp;&nbsp;<strong>Key:</strong> G&nbsp;&nbsp;<strong>Tuning:</strong>  Standard Open G (gDGBD)&nbsp;&nbsp;<br>Posted by <a href='/my/RJWMitchell'>RJWMitchell</a>, updated: 4/1/2016
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-9-miles-from-gu-21842-5785142016.pdf'>PDF</a></span><br><i>Notes: 2-finger thumb lead</i></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=9413'>99 Years</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Bluegrass&nbsp;&nbsp;<strong>Style:</strong> Bluegrass (Scruggs) &nbsp;&nbsp;<br>Posted by <a href='/my/schlange'>schlange</a>, updated: 3/17/2006
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/99_years-24.bjo'>TABRITE</a> | MIDI [<a title='Listen' href='#' onClick="var window_MEDIA=window.open('/myhangout/media-player/midi-player.asp?midifile=99_years-25.mid' , 'mediawindow','resizable=yes,WIDTH=400,HEIGHT=250');window_MEDIA.focus();return false;" title='99 Years'>Play</a>] [<a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/99_years-25.mid'>Download</a>]</span></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=9435'>99 Years</a></strong></h2><p class='noSpacing'><span class='small'><br>Posted by <a href='/my/schlange'>schlange</a>, updated: 3/18/2006
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br> - <A href='http://bluegrassbanjo.org/a-d.html' target='_blank'>Download from bluegrassbanjo.org</A></span></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=20682'>99 Years - Noam Pikelny Solo</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Bluegrass&nbsp;&nbsp;<strong>Style:</strong> Bluegrass (Scruggs) &nbsp;&nbsp;<strong>Key:</strong> B&nbsp;&nbsp;<strong>Tuning:</strong>  Standard Open G (gDGBD)&nbsp;&nbsp;<strong>Difficulty:</strong> Expert<br>Posted by <a href='/my/mikemoyes2'>mikemoyes2</a>, updated: 8/27/2014 - 1 <a href='/tab/browse.asp?m=detail&v=20682#comments'>Member Comments</a>
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-99-years---noam-20682-5346202782014.pdf'>PDF</a></span><br><i>Notes: This is my attempt at transcribing Noam's solo break from this Punch Bros youtube video...
+
+                                        https://www.youtube.com/watch?v=U8JA8AUnRxc
+
+                                        The solo comes in at 3:00 or so. I don't have Tabledit and did this in Sibelius so the slides/bends/etc. aren't as polished but you get the idea! Capo up to B to play with the video.</i></p>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="row zebra rowPadded">
+                                    <div class="column small-12">
+                                        <h2 class='noSpacing bold'><a href='/tab/browse.asp?m=detail&v=24616'>99 Years (second solo)</a></strong></h2><p class='noSpacing'><span class='small'><strong>Genre:</strong> Bluegrass&nbsp;&nbsp;<strong>Style:</strong> Bluegrass (Scruggs) &nbsp;&nbsp;<strong>Key:</strong> G&nbsp;&nbsp;<strong>Tuning:</strong>  Standard Open G (gDGBD)&nbsp;&nbsp;<strong>Difficulty:</strong> Intermediate<br>Posted by <a href='/my/RadMuz'>RadMuz</a>, updated: 12/3/2020
+
+                                        <a class="hide-print" href="javascript:;" onClick="alert('Please sign in before linking content to a group.');" title="Link This Content to a Group"><img style="position:relative; top:3px; " src="/global/img/link-to-group.png" title="Link This Item to Your Groups"></a>
+
+                                        <br><strong>Download:</strong> <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-99-years-24616-1443113122020.pdf'>PDF</a> | <a href='https://www.hangoutstorage.com/banjohangout.org/storage/tabs/other/tab-99-years-24616-544113122020.gpx'>GUITAR-PRO</a></span><br><i>Notes: Noam Pikelny https://www.youtube.com/watch?v=U8JA8AUnRxc</i></p>
+                                    </div>
+                                </div>
+
+
+                            </div></div>
+
+
+                            <div id="footer" class="row">
+                                <div class="small-10 small-offset-1 columns">
+                                    <div class="rule gradient"></div>
+                                    <div class="row padding">
+                                        <div class="small-4 columns">
+                                            <h4>Top Links</h4>
+                                            <ul class="menu vertical">
+                                                <li><a href="/forum/">Forum Home</a></li>
+                                                <li><a href="/classifieds/">Classified Ads</a></li>
+                                                <li><a href="/tab/">Tab Archives</a></li>						
+                                            </ul>
+                                        </div>
+
+                                        <div class="small-4 columns">
+                                            <h4>Support this Site</h4>
+                                            <ul class="menu vertical">
+                                                <li><a href="/store/details.asp?id=10">Players Union</a></li>
+                                                <li><a href="/sponsors/donate.asp">Donate</a></li>
+                                                <li><a href="/sponsors/tell-a-friend.asp">Tell a Friend</a></li>
+                                                <li><a href="/sponsors/">Advertising</a></li>
+                                                <li><a href="/sponsors/list.asp">Our Sponsors</a></li>
+                                                <li><a href="/pages/contact.asp">Contact Us</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="small-4 columns">
+                                            <h4>More Hangouts</h4>
+                                            <ul class="menu vertical">
+
+                                                <li><A href="https://www.resohangout.com" class="leftnav">Dobro</a></li>
+
+                                                <li><A href="https://www.fiddlehangout.com" class="leftnav">Fiddle</a></li>
+
+                                                <li><A href="https://www.flatpickerhangout.com" class="leftnav">Guitar</a></li>
+
+                                                <li><A href="https://www.mandohangout.com" class="leftnav">Mandolin</a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div><!--row-->
+                                    <p><!--<a href="#">Sitemap</a>  |  --><a href="/login/terms.asp">Terms of Use</a>  |  <a href="/login/privacy-policy.asp">Privacy Policy</a>  |  Copyright 2021 Banjo Hangout. All Rights Reserved.</p>
+                                </div>
+                            </div><!--footer row-->
+                    </div><!--center-column-->
+
+
+                </div><!--row-->
+            </div><!--fixed-width-left-->
+
+
+
+            <div id="right-column" class="columns" data-equalizer-watch="main">
+                <div id="scrollerRight">
+
+                    <div class="large-login">
+
+                        <div class="user-profile expanded pad10Right pad10Left row">
+                            <div class="small-12 columns">
+                                <div class="show-for-small-only"><br></div>
+
+                                <form method="post" action="/login/" name="thisform">
+
+
+                                    <input type="hidden" name="redir" value="/tab/browse.asp?m=byletternum&v=num">
+                                    <input type="hidden" name="refer" value="">
+
+
+                                    <input name="Name" type="text" size="20" maxlength="50" placeholder="Username" value="" />
+                                    <input class="noMargin" name="Password" type="password" size="20" maxlength="50" placeholder="Password" />
+
+                                    <div class="row collapse">
+                                        <div class="columns small-12 text-left">
+                                            <p class="noMargin small"><label for="member_login_save_password" class="white"><input id="member_login_save_password" name="SavePassword" type="checkbox" value="true" checked class="noSpacing" /> Save Password</label></p>
+                                        </div>
+                                    </div>                            
+
+                                    <div class="row collapse">
+
+                                        <div class="column small-12">
+                                            <input class="small button noMargin" style="width:100%;" name="submit" type="submit" value="Log In" />
+                                        </div>                                       
+                                    </div>
+
+                                    <div class="row collapse">
+                                        <div class="column small-12 text-center">
+                                            <p class="small "><a href="/pages/login/forgot.asp">Forgot Password</a></p>
+
+
+
+                                            <input class="small button noMargin"  style="width:100%;background-color:#229966;margin-bottom:20px;" name="submit" type="button" onclick="location.href='/login/profile.asp';" value="Sign Up" />
+                                        </div>
+                                    </div>      
+
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <br><div class='row show-for-large-up'>
+                        <div class='columns small-12 medium-12 show-for-large-up'>
+                            <a href='/pages/sponsors/counter.asp?goto=https://pegheadnation.com/string-school/courses/bluegrass-banjo/QUESTIONutm_source=HangoutAMPERutm_medium=bannerAMPERutm_campaign=HangoutAMPERutm_content=Bill-[]-adid=640'><img style='padding-bottom:10px;' alt='Please visit our sponsor' width='200' src='/img/ads/peghead-evans.jpg'></a>
+                            <p class='noSpacing'><a style='color:#224488;text-decoration:underline;' href='/pages/sponsors/counter.asp?goto=https://pegheadnation.com/string-school/courses/bluegrass-banjo/QUESTIONutm_source=HangoutAMPERutm_medium=bannerAMPERutm_campaign=HangoutAMPERutm_content=Bill-[]-adid=640'>Peghead Nation Instructor Bill Evans</a><br>
+                            <a style="text-decoration:none;color:#000" href='/pages/sponsors/counter.asp?goto=https://pegheadnation.com/string-school/courses/bluegrass-banjo/QUESTIONutm_source=HangoutAMPERutm_medium=bannerAMPERutm_campaign=HangoutAMPERutm_content=Bill-[]-adid=640'>Get started with Bill's Beginning Banjo course, or hone your bluegrass chops in Bluegrass Banjo.</a></p>
+                        </div>
+                    </div>
+                    <br>
+
+
+                    <!--row-->
+
+
+                    <div class="row zebraRight">
+                        <div class="column collapse">
+                            <p align="center" class="bold noSpacing">Newest Posts</p></div>
+                    </div>
+
+
+                    <div class="row zebraRight">
+                        <div class="column collapse pad10">
+                            <p class="small noSpacing"><a href="/topic/377558"><img border="0" alt="Click for Details" src="/global/img/icons/icon_folder_new_topic.gif"></a>&nbsp;<A href='/topic/377558'>'Need some information on what I believe is a Gibson RB250 2 pc flange and m'</A> 3 hrs</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row zebraRight">
+                        <div class="column collapse pad10">
+                            <p class="small noSpacing"><a href="/topic/377557"><img border="0" alt="Click for Details" src="/global/img/icons/icon_folder_new_topic.gif"></a>&nbsp;<A href='/topic/377557'>'What is this Gibson non-mastertone resonator tenor?'</A> 3 hrs</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row zebraRight">
+                        <div class="column collapse pad10">
+                            <p class="small noSpacing"><a href="/topic/377556"><img border="0" alt="Click for Details" src="/global/img/icons/icon_folder_new_topic.gif"></a>&nbsp;<A href='/topic/377556'>'Latest build'</A> 3 hrs</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row zebraRight">
+                        <div class="column collapse pad10">
+                            <p class="small noSpacing"><a href="/classified/89016"><img border="0" alt="Click for Details" src="/global/img/icons/classifieds.gif"></a>&nbsp;<A href='/classified/89016'>'WTB Deering John Hartford'</A> 5 hrs</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row zebraRight">
+                        <div class="column collapse pad10">
+                            <p class="small noSpacing"><a href="/classified/89015"><img border="0" alt="Click for Details" src="/global/img/icons/classifieds.gif"></a>&nbsp;<A href='/classified/89015'>'Iida 236'</A> 5 hrs</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row zebraRight">
+                        <div class="column collapse pad10">
+                            <p class="small noSpacing"><a href="/classified/89014"><img border="0" alt="Click for Details" src="/global/img/icons/classifieds.gif"></a>&nbsp;<A href='/classified/89014'>'&#34Clawhammer Banjo&#34  - And -  &#34Banjo Camp!&#34  -  Each With CD  -  Only $15 for Both'</A> 5 hrs</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row zebraRight">
+                        <div class="column collapse pad10">
+                            <p class="small noSpacing"><a href="/topic/377555"><img border="0" alt="Click for Details" src="/global/img/icons/icon_folder_new_topic.gif"></a>&nbsp;<A href='/topic/377555'>'Mountain banjo'</A> 6 hrs</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row zebraRight">
+                        <div class="column collapse pad10">
+                            <p class="small noSpacing"><a href="/topic/377554"><img border="0" alt="Click for Details" src="/global/img/icons/icon_folder_new_topic.gif"></a>&nbsp;<A href='/topic/377554'>'String height over head - at heel'</A> 6 hrs</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row zebraRight">
+                        <div class="column collapse pad10">
+                            <p class="small noSpacing"><a href="/topic/377553"><img border="0" alt="Click for Details" src="/global/img/icons/icon_folder_new_topic.gif"></a>&nbsp;<A href='/topic/377553'>'Banjo Workshop - LIVE from Carlton Haney's Blue Grass Festival 1966'</A> 7 hrs</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row zebraRight">
+                        <div class="column collapse pad10">
+                            <p class="small noSpacing"><a href="/myhangout/videos.asp?m=d&catID=0&id=40694"><img border="0" alt="Click for Details" src="/global/img/icons/film.png"></a>&nbsp;<A href='/myhangout/videos.asp?m=d&catID=0&id=40694'>'Banjo Workshop - LIVE from Carlton Haney&#39s 2nd Blue Grass Festival in Fincastle, VA 1966'</A> 7 hrs</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row zebraRight">
+                        <div class="column collapse pad10"><p class="bold noSpacing" align="right"><a href="/pages/feed.asp">More ></a>&nbsp;&nbsp;</p>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+            </div><!--right-column-->
+
+
+        </div><!--row-->
+
+        <div class="reveal" id="helpModal" data-reveal data-animation-in="fade-in" data-animation-out="fade-out">
+
+            <h1 class="center">Hangout Network Help</h1>
+
+            <h3 class="center"><a href="#" onClick="getTopic(true,0,0);return false;">View All Topics</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" onClick="getTopic(false,0,0);return false;">View Categories</a></h3>
+            <div id="topicContainer">
+
+            </div>
+            <div align="center">
+                <input type="button" value="Close Window" data-close class="button submit">
+            </div>
+
+            <script>
+                $(function(){
+                                    getTopic(true, 0, 0);
+                                });
+
+                function getTopic(prmAllTopics, prmCategoryID, prmTopicID) {
+                                    var url = "/pages/help/helpajax.asp";
+                                    var qs = '';
+                                    if (prmAllTopics == true) {
+                                                        qs = buildQS(qs, 'allTopics=1');
+                                                    }
+                                    if (prmCategoryID > 0) {
+                                                        qs = buildQS(qs, 'id=' + prmCategoryID);
+                                                    }
+                                    if (prmTopicID > 0) {
+                                                        qs = buildQS(qs, 'topicid=' + prmTopicID);
+                                                    }
+                                    console.log(url + qs);
+                                    $.ajax(url + qs).done(
+                                                        function(data) {
+                                                                            $("#topicContainer").html(data);
+                                                                        }
+                                                    );
+                                }
+
+                function buildQS(prmQS, prmText) {
+                                    var retVal;
+                                    if (prmQS == "") {
+                                                        retVal = "?" + prmText;
+                                                    } else {
+                                                                        retVal = "&" + prmText;
+                                                                    }
+                                    return retVal;
+                                }
+            </script>
+
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+
+        <script src="/global/functions.js?v=1.16"></script>
+        <script src="/global/onLoad.js?v=1.09"></script>
+
+        <!--chocolat lightbox-->
+        <script src="/global/js/jquery.chocolat.min.js"></script>
+        <script src="/global/js/vendor/what-input.js"></script>
+        <script src="/global/js/vendor/foundation.js?v=1.01"></script>
+        <script src="/global/js/app.js"></script>
+
+        <script src="/global/js/jquery.fitvids.js"></script>
+        <script src="/global/js/jquery.dialogOptions.js?v=1.02"></script>
+
+        <!--mentionsInput-->
+        <script src='/global/js/jquery.events.input.js' type='text/javascript'></script>
+        <script src='/global/js/jquery.elastic.js' type='text/javascript'></script>
+        <script src='/global/js/jquery.mentionsInput.js?v=1.03' type='text/javascript'></script>
+
+        <!-- Global Site Tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-3145817-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments)};
+            gtag('js', new Date());
+
+            gtag('config', 'UA-3145817-1');
+        </script>
+
+
+        <script>
+            $(function() {
+                            //shorthand onLoad call	
+
+                            $('.chocolat-parent').Chocolat( {
+                                            imageSize     : 'contain',
+                                            loop           : true,
+                                        });
+
+                            $('.submenu-button').on('click touchend', function(e) {
+                                            e.preventDefault();
+
+                                            currentMenu = $(this).next()
+
+                                            $('.submenu').not(currentMenu).slideUp();
+                                            currentMenu.slideToggle();
+                                        });
+
+                        });
+        </script>
+
+    </body>
+</html>
+
+
+
+<span style="display:none;">0.171875</span>
