@@ -84,15 +84,16 @@ The way the code is currently executed:
 1. [`download_tab_lists.py`](./download_tab_lists.py) downloads each html page
    that has lists of tabs.  Fortunately, these pages are regularly formatted, so
    the URLs are cached and read by the script in
-   (`url_list.json`)[./url_list.json]. The pages are downloaded and cahched in
-   the directory (`http_cache`)[./http_cache]
-2. [`parse_tablists.py`] reads each cached page, and parses out the relevant
-   information, storing the containers as plaintext and html text. This parsed
-   information is stored as a big json list (`parsed.json`)(./parsed.json).
+   [`url_list.json`](./url_list.json). The pages are downloaded and cahched in
+   the directory [`http_cache`](./http_cache).
+2. [`parse_tablists.py`](./parse_tablists.py) reads each cached page, and parses
+   out the relevant information, storing the containers as plaintext and html
+   text. This parsed information is stored as a big json list
+   [`parsed.json`](./parsed.json).
 3. [`download_tabs.py`](./download_tabs.py) reads each element from
    `parsed.json` and downloads the tab URL, if it exists, caching tabs to
-   (`raw_tabs`)[./raw_tabs]. Identifying information about each uniquely named
-   tab is stored in (`raw_tab_list.json`)[./raw_tab_list.json].
+   [`raw_tabs`](./raw_tabs). Identifying information about each uniquely named
+   tab is stored in [`raw_tab_list.json`](./raw_tab_list.json).
 
 ## Next steps
 
