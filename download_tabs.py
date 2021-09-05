@@ -1,38 +1,63 @@
 import json
 import requests
 import re
+import pandas as pd
 
-with open('./parsed.json', 'r') as f:
+with open('./lists/parsed.json', 'r') as f:
     download_list = json.load(f)
 
-raw_tab_list = []
+tabs = pd.DataFrame.from_records(download_list)
 
-for index, item in enumerate(download_list):
-    item['tab'] = 'error'
+tabs['filename_base'] = tabs['title'].apply(lambda x: '_'.join((x.lower().replace('?','').replace('(', ' ').replace(')', ' ').replace('/',' ').replace('\\', ' ').strip().split()[0:5]))) + tabs['difficulty'].apply(lambda x: "_" + x.lower() if x.lower() != 'error' else '') 
 
-    if item['link'] == 'error':
-        continue
-    else:
-        tabname = re.search(
-                'https://www.hangoutstorage.com/banjohangout.org/storage/tabs/.*/(.*\.tef)',
-                item['link']).group(1)
-        resp = requests.get(item['link'])
-        outfile = f"./raw_tabs/{tabname}".strip()
-        with open(outfile, "wb") as f:
-            f.write(resp.content)
-        print("Downloaded:", item['link'])
+valid_tabs = tabs[tabs['link'] != 'error']
+names = valid_tabs['filename_base'].unique()
 
-        raw_tab_list.append({
-            'filename': item['filename'],
-            'title': item['title'],
-            'key': item['key'],
-            'genre': item['genre'],
-            'style': item['style'],
-            'tuning': item['tuning'],
-            'difficulty': item['difficulty'],
-            'raw_tab': outfile,
-            'link': item['link']
-        })
+tab_status = []
 
-with open('raw_tab_list.json', 'w') as f:
-    f.write(json.dumps(raw_tab_list, indent=4))
+for name in names:
+    for idx, (row_idx, row) in enumerate(valid_tabs[valid_tabs['filename_base'] == name].iterrows()):
+        download_link = row.loc['link']
+        file_prefix = row.loc['filename_base']
+        outfile = f"./data/tabs/{file_prefix}_{idx:03d}.tef"
+
+        print(f"Downloading {download_link} and saving to {outfile}")
+        resp = requests.get(download_link)
+        
+        if resp.status_code == 200:
+            # We're good!
+            with open(outfile, "wb") as f:
+                f.write(resp.content)
+            tab_status.append({
+                'filename': row['filename'],
+                'title': row['title'],
+                'key': row['key'],
+                'genre': row['genre'],
+                'style': row['style'],
+                'tuning': row['tuning'],
+                'difficulty': row['difficulty'],
+                'downloaded_tab': outfile,
+                'link': row['link'],
+                'http_status': resp.status_code
+            })
+        else:
+            # We're not good!
+            print("...Error, HTTP Status: ", resp.status_code)
+            tab_status.append({
+                'filename': row['filename'],
+                'title': row['title'],
+                'key': row['key'],
+                'genre': row['genre'],
+                'style': row['style'],
+                'tuning': row['tuning'],
+                'difficulty': row['difficulty'],
+                'downloaded_tab': 'error',
+                'link': row['link'],
+                'http_status': resp.status_code
+            })
+
+        print('...Done!')
+
+
+with open('./lists/tabs.json', 'w') as f:
+    f.write(json.dumps(tab_status, indent=4))
